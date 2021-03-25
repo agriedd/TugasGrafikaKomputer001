@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace TugasGrafikaKomputer001
 {
-    class DDA{
+    class DDA : AlgoritmaGaris {
 
         private int x0, y0, x1, y1;
         public List<int[]> nilai;
@@ -45,7 +45,9 @@ namespace TugasGrafikaKomputer001
             /**
              * 1. Tentukan dua titik yang akan dihubungkan dalam pembentukan garis ✔️
              *
-             * 2. Tentukan salah satunya sebagai titik awal (x1, y1) dan yang lain sebagai titik akhir (x2, y2).             *              */
+             * 2. Tentukan salah satunya sebagai titik awal (x1, y1) dan yang lain sebagai titik akhir (x2, y2).
+             * 
+             */
 
             float x0 = this.x0;
             float y0 = this.y0;
@@ -53,12 +55,19 @@ namespace TugasGrafikaKomputer001
             float y1 = this.y1;
 
             /**
-             * 3. Hitung : dx = x2 − x1 dan dy = y2 − y1             *             */
+             * 3. Hitung : dx = x2 − x1 dan dy = y2 − y1
+             *
+             */
 
-            float dx = x1 - x0;            float dy = y1 - y0;
+            float dx = x1 - x0;
+            float dy = y1 - y0;
 
-            /**            * 4. Tentukan step, dengan ketentuan berikut:
-            * - bila |dx| > |dy| maka step = |dx|            * - bila tidak, maka step = |dy|             *             */
+            /**
+            * 4. Tentukan step, dengan ketentuan berikut:
+            * - bila |dx| > |dy| maka step = |dx|
+            * - bila tidak, maka step = |dy| 
+            * 
+            */
 
             float step = Math.Abs(dy);
             if (Math.Abs(dx) > Math.Abs(dy))

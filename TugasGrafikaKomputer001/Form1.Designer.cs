@@ -28,10 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel8 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.panelError = new System.Windows.Forms.Panel();
+            this.labelError = new System.Windows.Forms.Label();
+            this.panelB = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.panelDDA = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -47,20 +51,17 @@
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxY0 = new System.Windows.Forms.TextBox();
             this.panelDraw = new System.Windows.Forms.Panel();
-            this.panelB = new System.Windows.Forms.Panel();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.labelError = new System.Windows.Forms.Label();
-            this.panel8 = new System.Windows.Forms.Panel();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.listView1 = new System.Windows.Forms.ListView();
             this.label13 = new System.Windows.Forms.Label();
+            this.posisi_mouse = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panelError.SuspendLayout();
+            this.panelB.SuspendLayout();
             this.panelDDA.SuspendLayout();
             this.panelBF.SuspendLayout();
-            this.panelB.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -85,30 +86,90 @@
             this.panel1.Size = new System.Drawing.Size(286, 437);
             this.panel1.TabIndex = 0;
             // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.Gainsboro;
+            this.panel8.BackgroundImage = global::TugasGrafikaKomputer001.Properties.Resources.twotone_play_circle_black_24dp;
+            this.panel8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.panel8.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panel8.Location = new System.Drawing.Point(63, 380);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(55, 53);
+            this.panel8.TabIndex = 6;
+            this.panel8.Click += new System.EventHandler(this.panel8_Click);
+            this.panel8.MouseLeave += new System.EventHandler(this.panel8_MouseLeave);
+            this.panel8.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel8_MouseHover);
+            // 
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel7.BackgroundImage")));
+            this.panel7.BackgroundImage = global::TugasGrafikaKomputer001.Properties.Resources.twotone_close_black_24dp;
             this.panel7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.panel7.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panel7.Location = new System.Drawing.Point(5, 381);
+            this.panel7.Location = new System.Drawing.Point(5, 380);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(55, 53);
             this.panel7.TabIndex = 6;
-            this.panel7.Click += new System.EventHandler(this.panel7_Click);
+            this.panel7.Click += new System.EventHandler(this.pictureBox1_Click);
             this.panel7.MouseLeave += new System.EventHandler(this.panel7_MouseLeave);
-            this.panel7.MouseHover += new System.EventHandler(this.panel7_MouseHover);
+            this.panel7.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel7_MouseHover);
             // 
             // panelError
             // 
             this.panelError.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
             this.panelError.Controls.Add(this.labelError);
-            this.panelError.Location = new System.Drawing.Point(121, 381);
+            this.panelError.Location = new System.Drawing.Point(121, 380);
             this.panelError.Name = "panelError";
             this.panelError.Size = new System.Drawing.Size(159, 53);
             this.panelError.TabIndex = 5;
             this.panelError.Visible = false;
             this.panelError.Paint += new System.Windows.Forms.PaintEventHandler(this.panel6_Paint);
+            // 
+            // labelError
+            // 
+            this.labelError.AutoEllipsis = true;
+            this.labelError.AutoSize = true;
+            this.labelError.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.labelError.Location = new System.Drawing.Point(11, 20);
+            this.labelError.Name = "labelError";
+            this.labelError.Size = new System.Drawing.Size(41, 13);
+            this.labelError.TabIndex = 0;
+            this.labelError.Text = "label11";
+            // 
+            // panelB
+            // 
+            this.panelB.BackColor = System.Drawing.Color.Gainsboro;
+            this.panelB.Controls.Add(this.label9);
+            this.panelB.Controls.Add(this.label10);
+            this.panelB.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.panelB.Location = new System.Drawing.Point(5, 269);
+            this.panelB.Name = "panelB";
+            this.panelB.Size = new System.Drawing.Size(275, 108);
+            this.panelB.TabIndex = 5;
+            this.panelB.Click += new System.EventHandler(this.panelB_Click);
+            this.panelB.MouseLeave += new System.EventHandler(this.panel5_MouseLeave);
+            this.panelB.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel5_MouseHover);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(9, 42);
+            this.label9.Margin = new System.Windows.Forms.Padding(0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(122, 25);
+            this.label9.TabIndex = 0;
+            this.label9.Text = "Bressenham";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(13, 29);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(50, 13);
+            this.label10.TabIndex = 0;
+            this.label10.Text = "Algoritma";
             // 
             // panelDDA
             // 
@@ -116,13 +177,13 @@
             this.panelDDA.Controls.Add(this.label7);
             this.panelDDA.Controls.Add(this.label8);
             this.panelDDA.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panelDDA.Location = new System.Drawing.Point(144, 159);
+            this.panelDDA.Location = new System.Drawing.Point(144, 158);
             this.panelDDA.Name = "panelDDA";
             this.panelDDA.Size = new System.Drawing.Size(136, 108);
             this.panelDDA.TabIndex = 5;
             this.panelDDA.Click += new System.EventHandler(this.panelDDA_Click);
             this.panelDDA.MouseLeave += new System.EventHandler(this.panel4_MouseLeave);
-            this.panelDDA.MouseHover += new System.EventHandler(this.panel4_MouseHover);
+            this.panelDDA.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel4_MouseHover);
             // 
             // label7
             // 
@@ -151,13 +212,13 @@
             this.panelBF.Controls.Add(this.label6);
             this.panelBF.Controls.Add(this.label5);
             this.panelBF.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panelBF.Location = new System.Drawing.Point(5, 159);
+            this.panelBF.Location = new System.Drawing.Point(5, 158);
             this.panelBF.Name = "panelBF";
             this.panelBF.Size = new System.Drawing.Size(136, 108);
             this.panelBF.TabIndex = 5;
             this.panelBF.Click += new System.EventHandler(this.panelBF_Click);
             this.panelBF.MouseLeave += new System.EventHandler(this.panel3_MouseLeave);
-            this.panelBF.MouseHover += new System.EventHandler(this.panel3_MouseHover);
+            this.panelBF.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panel3_MouseHover);
             // 
             // label6
             // 
@@ -283,70 +344,12 @@
             this.panelDraw.TabIndex = 0;
             this.panelDraw.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             this.panelDraw.DoubleClick += new System.EventHandler(this.panel2_DoubleClick);
-            // 
-            // panelB
-            // 
-            this.panelB.BackColor = System.Drawing.Color.Gainsboro;
-            this.panelB.Controls.Add(this.label9);
-            this.panelB.Controls.Add(this.label10);
-            this.panelB.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panelB.Location = new System.Drawing.Point(5, 270);
-            this.panelB.Name = "panelB";
-            this.panelB.Size = new System.Drawing.Size(275, 108);
-            this.panelB.TabIndex = 5;
-            this.panelB.Click += new System.EventHandler(this.panelB_Click);
-            this.panelB.MouseLeave += new System.EventHandler(this.panel5_MouseLeave);
-            this.panelB.MouseHover += new System.EventHandler(this.panel5_MouseHover);
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(9, 42);
-            this.label9.Margin = new System.Windows.Forms.Padding(0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(122, 25);
-            this.label9.TabIndex = 0;
-            this.label9.Text = "Bressenham";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(13, 29);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(50, 13);
-            this.label10.TabIndex = 0;
-            this.label10.Text = "Algoritma";
-            // 
-            // labelError
-            // 
-            this.labelError.AutoEllipsis = true;
-            this.labelError.AutoSize = true;
-            this.labelError.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.labelError.Location = new System.Drawing.Point(11, 20);
-            this.labelError.Name = "labelError";
-            this.labelError.Size = new System.Drawing.Size(41, 13);
-            this.labelError.TabIndex = 0;
-            this.labelError.Text = "label11";
-            // 
-            // panel8
-            // 
-            this.panel8.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel8.BackgroundImage")));
-            this.panel8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.panel8.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.panel8.Location = new System.Drawing.Point(63, 381);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(55, 53);
-            this.panel8.TabIndex = 6;
-            this.panel8.Click += new System.EventHandler(this.panel8_Click);
-            this.panel8.MouseLeave += new System.EventHandler(this.panel8_MouseLeave);
-            this.panel8.MouseHover += new System.EventHandler(this.panel8_MouseHover);
+            this.panelDraw.MouseMove += new System.Windows.Forms.MouseEventHandler(this.panelDraw_MouseMove);
             // 
             // label11
             // 
             this.label11.AutoSize = true;
+            this.label11.ForeColor = System.Drawing.Color.MidnightBlue;
             this.label11.Location = new System.Drawing.Point(348, 13);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(22, 13);
@@ -356,6 +359,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
+            this.label12.ForeColor = System.Drawing.Color.MidnightBlue;
             this.label12.Location = new System.Drawing.Point(730, 474);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(46, 13);
@@ -376,18 +380,43 @@
             // label13
             // 
             this.label13.AutoSize = true;
+            this.label13.ForeColor = System.Drawing.Color.MidnightBlue;
             this.label13.Location = new System.Drawing.Point(794, 45);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(63, 13);
             this.label13.TabIndex = 3;
             this.label13.Text = "Kelompok 6";
             // 
+            // posisi_mouse
+            // 
+            this.posisi_mouse.AutoSize = true;
+            this.posisi_mouse.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.posisi_mouse.Location = new System.Drawing.Point(554, 13);
+            this.posisi_mouse.Name = "posisi_mouse";
+            this.posisi_mouse.Size = new System.Drawing.Size(22, 13);
+            this.posisi_mouse.TabIndex = 3;
+            this.posisi_mouse.Text = "0,0";
+            this.posisi_mouse.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label14.Location = new System.Drawing.Point(25, 474);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(424, 13);
+            this.label14.TabIndex = 3;
+            this.label14.Text = "Double Click dimana saja untuk menentukan titik X1,Y1 dengan menggunakan mouse ✌️" +
+    "";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Window;
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(990, 496);
+            this.Controls.Add(this.label14);
+            this.Controls.Add(this.posisi_mouse);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.listView1);
             this.Controls.Add(this.label12);
@@ -399,16 +428,19 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "                             ";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseMove);
+            this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseUp);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panelError.ResumeLayout(false);
             this.panelError.PerformLayout();
+            this.panelB.ResumeLayout(false);
+            this.panelB.PerformLayout();
             this.panelDDA.ResumeLayout(false);
             this.panelDDA.PerformLayout();
             this.panelBF.ResumeLayout(false);
             this.panelBF.PerformLayout();
-            this.panelB.ResumeLayout(false);
-            this.panelB.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -443,6 +475,8 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.ListView listView1;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label posisi_mouse;
+        private System.Windows.Forms.Label label14;
     }
 }
 

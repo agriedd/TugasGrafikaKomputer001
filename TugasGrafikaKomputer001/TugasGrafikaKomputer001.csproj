@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AlgoritmaGaris.cs" />
     <Compile Include="Bressenham.cs" />
     <Compile Include="BruteForce.cs" />
     <Compile Include="DDA.cs" />
@@ -68,6 +69,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -81,6 +83,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\twotone_play_circle_black_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\twotone_close_black_24dp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tom-barrett-hgGplX3PFBg-unsplash.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
