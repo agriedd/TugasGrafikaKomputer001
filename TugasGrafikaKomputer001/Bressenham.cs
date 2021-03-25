@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace TugasGrafikaKomputer001
 {
-    class Bressenham
+    class Bressenham : AlgoritmaGaris
     {
 
         private int x0, y0, x1, y1;
@@ -95,7 +95,7 @@ namespace TugasGrafikaKomputer001
 
             bool selesai = false;
 
-            while ( !selesai && k < 300 ){
+            while ( !selesai && k < 500 ){
 
                 if(p < 0){
                     x += 1;

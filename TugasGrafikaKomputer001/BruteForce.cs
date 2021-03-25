@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace TugasGrafikaKomputer001
 {
-    class BruteForce{
+    class BruteForce : AlgoritmaGaris{
 
         private int x0, y0, x1, y1;
         public List<int[]> nilai;
