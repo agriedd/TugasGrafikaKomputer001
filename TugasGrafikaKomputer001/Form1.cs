@@ -22,6 +22,13 @@ namespace TugasGrafikaKomputer001
         private int x0, y0, x1, y1;
 
         /**
+         * tambahan menentukan warna line
+         * 
+         */
+
+        private Color warna = Color.Black;
+
+        /**
          * membuat opsi pilihan static
          * 
          * fungsinya sama seperti constant
@@ -38,7 +45,7 @@ namespace TugasGrafikaKomputer001
          *      gunakan public const string BRUTEFORCE, DDA, dan BRESSENHAM diatas untuk nilai variabel ini
          *       
          */
-        private string algoritma = "bruteforce";
+        private string algoritma;
 
         /**
          * karena form ini tidak menggunakan border maka form ini tidak dapat digeser, sehingga untuk mengakalinya dengan
@@ -107,6 +114,12 @@ namespace TugasGrafikaKomputer001
             label5.ForeColor = Color.White;
             label6.ForeColor = Color.White;
         }
+
+        /**
+         * fungsi yang menghandle event mouseOver sebelumnya, ketika mouse keluar dari
+         * objek panel maka warna background dan labelnya dikembalikan seperti sedia kala
+         * 
+         */
         private void panel3_MouseLeave(object sender, EventArgs e){
             var panel = (Panel)sender;
             panel.BackColor = Color.Gainsboro;
@@ -120,13 +133,6 @@ namespace TugasGrafikaKomputer001
             label8.ForeColor = Color.White;
         }
 
-        private void panel7_Click(object sender, EventArgs e){}
-
-        /**
-         * fungsi yang menghandle event mouseOver sebelumnya, ketika mouse keluar dari
-         * objek panel maka warna background dan labelnya dikembalikan seperti sedia kala
-         * 
-         */
         private void panel4_MouseLeave(object sender, EventArgs e){
             var panel = (Panel)sender;
             panel.BackColor = Color.Gainsboro;
@@ -175,7 +181,7 @@ namespace TugasGrafikaKomputer001
          */
         private void panel7_MouseHover(object sender, EventArgs e){
             var panel = (Panel)sender;
-            panel.BackColor = Color.HotPink;
+            panel.BackColor = Color.IndianRed;
         }
 
         /**
@@ -206,6 +212,7 @@ namespace TugasGrafikaKomputer001
 
                 /**
                  *  dengan menggunakan interface akan menghemat baris perintah dari 3 buah class yang berbeda
+                 *  karena ketiga class menggunakan method yang sama
                  * 
                  */
                 AlgoritmaGaris algoritma = null;
@@ -224,6 +231,12 @@ namespace TugasGrafikaKomputer001
                 }
 
                 /**
+                 * menentukan warna sebelum menggambar pada canvas
+                 * 
+                 */
+                algoritma.setColor( this.warna );
+
+                /**
                  * mengambbar gari diatas canvas
                  * 
                  */
@@ -238,6 +251,7 @@ namespace TugasGrafikaKomputer001
                  * 
                  */
                 listView1.Items.Clear();
+
                 /**
                  * 
                  * berikutnya dengan melakukan perulangan agar tiap point yang didapat dari hasil
@@ -427,7 +441,6 @@ namespace TugasGrafikaKomputer001
         }
 
 
-
         /**
          * 
          * method buat milih algoritma jadi algoritma yang dipilih
@@ -453,6 +466,18 @@ namespace TugasGrafikaKomputer001
             panelBF.BorderStyle = BorderStyle.None;
             panelB.BorderStyle = BorderStyle.None;
             panelDDA.BorderStyle = BorderStyle.FixedSingle;
+        }
+
+
+        private void panel2_Click(object sender, EventArgs e){
+            var color_dialog = new ColorDialog();
+            var result = color_dialog.ShowDialog();
+            var panel = (Panel) sender;
+            if(result == DialogResult.OK){
+                panel.BackColor = color_dialog.Color;
+                this.warna = color_dialog.Color;
+            }
+            color_dialog = null;
         }
     }
 }

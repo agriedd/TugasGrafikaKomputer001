@@ -83,6 +83,16 @@ namespace TugasGrafikaKomputer001.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap twotone_palette_white_24dp {
+            get {
+                object obj = ResourceManager.GetObject("twotone_palette_white_24dp", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap twotone_play_circle_black_24dp {
             get {
                 object obj = ResourceManager.GetObject("twotone_play_circle_black_24dp", resourceCulture);

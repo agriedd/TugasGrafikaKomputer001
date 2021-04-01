@@ -13,6 +13,7 @@ namespace TugasGrafikaKomputer001
 
         private int x0, y0, x1, y1;
         public List<int[]> nilai;
+        private Color warna;
 
         public BruteForce(int x0, int y0, int x1, int y1){
             this.x0 = x0;
@@ -30,7 +31,11 @@ namespace TugasGrafikaKomputer001
 
             if(penampung.Count > 0)
                 foreach(int[] i in penampung){
-                    canvas.DrawRectangle(new Pen(Color.Black, 0), i[0], i[1], 1, 1);
+                    if (this.warna == null)
+                        this.warna = Color.Black;
+
+                    var pen = new Pen(this.warna, 0);
+                    canvas.DrawRectangle(pen, i[0], i[1], 1, 1);
                 }
         }
 
@@ -176,6 +181,11 @@ namespace TugasGrafikaKomputer001
             foreach (int[] i in this.nilai)
                 penampung.Add(String.Join(", ", i));
             return penampung;
+        }
+
+        public void setColor(Color color)
+        {
+            this.warna = color;
         }
     }
 }

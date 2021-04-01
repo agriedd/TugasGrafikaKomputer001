@@ -15,6 +15,7 @@ namespace TugasGrafikaKomputer001
 
         private int x0, y0, x1, y1;
         public List<int[]> nilai;
+        private Color warna;
 
         public Bressenham(int x0, int y0, int x1, int y1)
         {
@@ -35,7 +36,11 @@ namespace TugasGrafikaKomputer001
             if (penampung.Count > 0)
                 foreach (int[] i in penampung)
                 {
-                    canvas.DrawRectangle(new Pen(Color.Black, 0), i[0], i[1], 1, 1);
+                    if (this.warna == null)
+                        this.warna = Color.Black;
+
+                    var pen = new Pen(this.warna, 0);
+                    canvas.DrawRectangle(pen, i[0], i[1], 1, 1);
                 }
         }
 
@@ -67,7 +72,6 @@ namespace TugasGrafikaKomputer001
             int dx = x1 - x0;
             int dy = y1 - y0;
 
-
             /**
              * 
              * tambahan
@@ -81,7 +85,7 @@ namespace TugasGrafikaKomputer001
              * 
              */
 
-            if(dx >= dy){
+            if (dx >= dy){
                 return this.dxLebihDariDy(penampung, dx, dy, x0, y0);
             } else {
                 return this.dyLebihDariDx(penampung, dx, dy, x0, y0);
@@ -121,29 +125,27 @@ namespace TugasGrafikaKomputer001
 
             bool selesai = false;
 
-
-            /**
-             * mencek arah x ke kiri atau ke kanan
-             * 
-             * arah_x akan menentukan kemana garis akan menuju jika ke kiri maka arah_x bernilai -1
-             * 
-             */
-            int arah_x = 1;
-            if (this.x1 < x0)
-                arah_x = -1;
-
-            /**
-             * mencek arah y ke atas atau ke bawah
-             * 
-             * arah_y akan menentukan kemana garis akan menuju jika ke atas maka arah_y bernilai -1
-             * 
-             */
-            int arah_y = 1;
-            if (this.y1 < y0)
-                arah_y = -1;
-
-
             while (!selesai && k < 500){
+
+                /**
+                 * mencek arah x ke kiri atau ke kanan
+                 * 
+                 * arah_x akan menentukan kemana garis akan menuju jika ke kiri maka arah_x bernilai -1
+                 * 
+                 */
+                int arah_x = 1;
+                if (this.x1 < x)
+                    arah_x = -1;
+
+                /**
+                 * mencek arah y ke atas atau ke bawah
+                 * 
+                 * arah_y akan menentukan kemana garis akan menuju jika ke atas maka arah_y bernilai -1
+                 * 
+                 */
+                int arah_y = 1;
+                if (this.y1 < y)
+                    arah_y = -1;
 
                 if (p < 0){
                     x += arah_x;
@@ -198,33 +200,33 @@ namespace TugasGrafikaKomputer001
 
             bool selesai = false;
 
-
-            /**
-             * mencek arah x ke kiri atau ke kanan
-             * 
-             * arah_x akan menentukan kemana garis akan menuju jika ke kiri maka arah_x bernilai -1
-             * 
-             */
-            int arah_x = 1;
-            if (this.x1 < x0)
-                arah_x = -1;
-
-            /**
-             * mencek arah y ke atas atau ke bawah
-             * 
-             * arah_y akan menentukan kemana garis akan menuju jika ke atas maka arah_y bernilai -1
-             * 
-             */
-            int arah_y = 1;
-            if (this.y1 < y0)
-                arah_y = -1;
-
             while (!selesai && k < 500){
+
+                /**
+                 * mencek arah x ke kiri atau ke kanan
+                 * 
+                 * arah_x akan menentukan kemana garis akan menuju jika ke kiri maka arah_x bernilai -1
+                 * 
+                 */
+                int arah_x = 1;
+                if (this.x1 < x)
+                    arah_x = -1;
+
+                /**
+                 * mencek arah y ke atas atau ke bawah
+                 * 
+                 * arah_y akan menentukan kemana garis akan menuju jika ke atas maka arah_y bernilai -1
+                 * 
+                 */
+                int arah_y = 1;
+                if (this.y1 < y)
+                    arah_y = -1;
 
                 if (p < 0)
                 {
                     y += arah_y;
                     p = p + dx_2;
+
                 } else {
                     x += arah_x;
                     y += arah_y;
@@ -247,6 +249,10 @@ namespace TugasGrafikaKomputer001
             foreach (int[] i in this.nilai)
                 penampung.Add(String.Join(", ", i));
             return penampung;
+        }
+
+        public void setColor(Color color){
+            this.warna = color;
         }
     }
 }

@@ -57,6 +57,7 @@
             this.label13 = new System.Windows.Forms.Label();
             this.posisi_mouse = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panelError.SuspendLayout();
             this.panelB.SuspendLayout();
@@ -381,7 +382,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.ForeColor = System.Drawing.Color.MidnightBlue;
-            this.label13.Location = new System.Drawing.Point(794, 45);
+            this.label13.Location = new System.Drawing.Point(830, 33);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(63, 13);
             this.label13.TabIndex = 3;
@@ -409,12 +410,26 @@
             this.label14.Text = "Double Click dimana saja untuk menentukan titik X1,Y1 dengan menggunakan mouse ✌️" +
     "";
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Black;
+            this.panel2.BackgroundImage = global::TugasGrafikaKomputer001.Properties.Resources.twotone_palette_white_24dp;
+            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Cursor = System.Windows.Forms.Cursors.Default;
+            this.panel2.Location = new System.Drawing.Point(782, 33);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(42, 42);
+            this.panel2.TabIndex = 4;
+            this.panel2.Click += new System.EventHandler(this.panel2_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(990, 496);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.posisi_mouse);
             this.Controls.Add(this.label13);
@@ -477,6 +492,7 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label posisi_mouse;
         private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Panel panel2;
     }
 }
 

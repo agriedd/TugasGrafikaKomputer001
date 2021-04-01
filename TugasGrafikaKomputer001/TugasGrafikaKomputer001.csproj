@@ -93,5 +93,8 @@
   <ItemGroup>
     <None Include="Resources\tom-barrett-hgGplX3PFBg-unsplash.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\twotone_palette_white_24dp.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
